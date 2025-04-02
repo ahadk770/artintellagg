@@ -9,7 +9,24 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="mainContent" class="mainContent"></div>
+    <div id="mainContent" class="mainContent">
+      <div class="savedPromptContainer">
+        <textarea class="savedPrompt" id="savedPrompt"></textarea>
+        <div class="actionButtons">
+            <button id="savedPromptToClipboard">
+                <img class="icon" src="./public/clipboard.svg"></img>
+            </button>
+            <button id="clearSavedPrompt">
+                <img class="icon" src="./public/trash.svg"></img>
+            </button>
+        </div>
+      </div>
+      <button class="randomButton" id="randomButton">
+        <img src=./public/random.svg class="randomIcon"></img> 
+        <p>Random</p>
+      </button>
+      <div id="options"></div>
+    </div>
     <script src="./dist/script.js" type="module"></script>
   </body>
 </html>
