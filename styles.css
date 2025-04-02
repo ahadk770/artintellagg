@@ -70,7 +70,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   background-color: #ff7cb7;
-  color: white;
+  color: #f3f4f6;
   border: none;
   transition: background-color 0.3s ease;
 }
@@ -168,5 +168,28 @@ button:hover {
     color: #b5a8d5;
     text-shadow: 0 0 15px #211c84, 0 0 25px #211c84;
     animation: glow 1.5s linear infinite;
+  }
+}
+
+.selected {
+  background-color: #5e103e;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: anchor-center;
+  gap: 0.75rem;
+  background-color: #5e103e;
+  padding: 1rem;
+  border-radius: 5px;
+  opacity: 70%;
+  margin-top: 1rem;
+  kbd {
+    color: #5e103e;
+    background-color: #f3f4f6;
+    border-radius: 2px;
+    padding: 2px;
+    font-weight: bold;
   }
 }
