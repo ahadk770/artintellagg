@@ -32,6 +32,8 @@ const ai_agg: AIOption[] = [
 ];
 
 let selectedIndex = 0;
+let lastKeyTime = 0;
+const doublePressThreshold = 300;
 
 const renderOption = (option: AIOption, index: number) => {
   const optionContainer = document.createElement("div");
@@ -86,6 +88,13 @@ document.addEventListener("keydown", (event) => {
   } else if ((event.ctrlKey || event.metaKey) && event.key === "c") {
     event.preventDefault();
     copyToClipboard();
+  } else if (event.key === "d") {
+    const currentTime = new Date().getTime();
+    if (currentTime - lastKeyTime < doublePressThreshold) {
+      event.preventDefault();
+      clearContent();
+    }
+    lastKeyTime = currentTime;
   }
 });
 
