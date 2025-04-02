@@ -1,3 +1,11 @@
+import {
+  clearContent,
+  copyToClipboard,
+  debounce,
+  fillFromLocalStorage,
+  saveToLocalStorage,
+} from "./storageHelper.js";
+
 interface AIOption {
   company: string;
   website: string;
@@ -75,8 +83,38 @@ document.addEventListener("keydown", (event) => {
     updateSelection((selectedIndex - 1 + ai_agg.length) % ai_agg.length);
   } else if (event.key === "Enter" && selectedIndex !== -1) {
     window.open(ai_agg[selectedIndex].website, "_blank");
+  } else if ((event.ctrlKey || event.metaKey) && event.key === "c") {
+    event.preventDefault();
+    copyToClipboard();
   }
 });
 
-ai_agg.forEach((a, index) => renderOption(a, index));
-updateSelection(0);
+const setupPromptTextBox = () => {
+  document
+    .getElementById("savedPrompt")
+    ?.addEventListener("input", debounce(saveToLocalStorage, 500));
+
+  window.addEventListener("load", fillFromLocalStorage);
+
+  document
+    .getElementById("savedPromptToClipboard")
+    ?.addEventListener("click", copyToClipboard);
+  document
+    .getElementById("clearSavedPrompt")
+    ?.addEventListener("click", clearContent);
+};
+
+const addEventListenerToRandomButton = () => {
+  document.getElementById("randomButton")?.addEventListener("click", () => {
+    const randomIdx = Math.floor(Math.random() * ai_agg.length);
+    window.open(ai_agg[randomIdx].website, "_blank");
+  });
+};
+
+function main() {
+  ai_agg.forEach((a, index) => renderOption(a, index));
+  updateSelection(0);
+  setupPromptTextBox();
+  addEventListenerToRandomButton();
+}
+main();

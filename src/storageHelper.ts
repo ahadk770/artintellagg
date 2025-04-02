@@ -26,8 +26,7 @@ function fillFromLocalStorage() {
 function copyToClipboard() {
   const savedPrompt = document.getElementById("savedPrompt");
   if (savedPrompt && savedPrompt instanceof HTMLTextAreaElement) {
-    savedPrompt.select();
-    document.execCommand("copy");
+    navigator.clipboard.writeText(savedPrompt.value);
   }
 }
 
