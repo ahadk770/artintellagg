@@ -37,6 +37,7 @@ const renderOption = (option: AIOption) => {
 
   const img = document.createElement("img");
   img.src = option.icon;
+  img.className = "companyIcon";
   optionContainer.appendChild(img);
 
   const detailsContainer = document.createElement("div");

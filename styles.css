@@ -13,6 +13,7 @@ p {
   margin: 0;
   font-size: 1rem;
   font-weight: 400;
+  color: #f3f4f6;
 }
 
 .headerContainer {
@@ -20,7 +21,7 @@ p {
 }
 
 .promptText {
-  color: white;
+  color: #f3f4f6;
 }
 
 .savedPromptContainer {
@@ -36,7 +37,7 @@ p {
   flex-grow: 1;
   resize: none;
   min-height: 5rem;
-  color: rgb(36, 35, 42);
+  color: #42062a;
   font-size: 16px;
   line-height: 20px;
   border-radius: 4px;
@@ -48,6 +49,8 @@ p {
   white-space: normal;
   font-family: monospace;
   max-width: 100%;
+  border: none;
+  outline: none;
 }
 
 .savedPrompt:focus {
@@ -76,6 +79,12 @@ button:hover {
   background-color: #e0659d;
 }
 
+.companyIcon {
+  padding: 0.25rem;
+  background: #f3f4f6;
+  border-radius: 0.2rem;
+}
+
 .icon {
   width: 1.5rem;
 }
@@ -101,6 +110,7 @@ button:hover {
   gap: 1.5rem;
   background-color: #db61a2;
   padding: 1rem;
+  align-items: center;
 }
 
 .optionContainer:hover {
@@ -135,4 +145,28 @@ button:hover {
 }
 .randomButton:hover {
   background-color: #f778ba;
+}
+
+.bottomBarContainer {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 1rem;
+
+  .contentText {
+    text-decoration: none;
+    font-family: monospace;
+    font-style: normal;
+    font-size: var(--bottom-bar-text-font-size);
+    color: #ffffff;
+  }
+
+  .contentText:hover {
+    color: #b5a8d5;
+    text-shadow: 0 0 15px #211c84, 0 0 25px #211c84;
+    animation: glow 1.5s linear infinite;
+  }
 }
