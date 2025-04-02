@@ -10,17 +10,20 @@
   </head>
   <body>
     <div id="mainContent" class="mainContent">
-      <div class="savedPromptContainer">
-        <textarea class="savedPrompt" id="savedPrompt"></textarea>
-        <div class="actionButtons">
-            <button id="savedPromptToClipboard">
-                <img class="icon" src="./public/clipboard.svg"></img>
-            </button>
-            <button id="clearSavedPrompt">
-                <img class="icon" src="./public/trash.svg"></img>
-            </button>
+        <div class="headerContainer">
+            <p class="promptText">save prompt</p>
+            <div class="savedPromptContainer">
+                <textarea class="savedPrompt" id="savedPrompt"></textarea>
+                <div class="actionButtons">
+                <button id="savedPromptToClipboard">
+                    <img class="icon" src="./public/clipboard.svg"></img>
+                </button>
+                <button id="clearSavedPrompt">
+                    <img class="icon" src="./public/trash.svg"></img>
+                </button>
+            </div>
         </div>
-      </div>
+    </div>
       <button class="randomButton" id="randomButton">
         <img src=./public/random.svg class="randomIcon"></img> 
         <p>Random</p>

@@ -41,13 +41,14 @@ const renderOption = (option: AIOption) => {
 
   const detailsContainer = document.createElement("div");
   detailsContainer.className = "detailsContainer";
+
   const title = document.createElement("p");
   title.textContent = option.company;
   detailsContainer.appendChild(title);
 
-  const url = document.createElement("p");
-  url.textContent = option.website;
-  detailsContainer.appendChild(url);
+  //   const url = document.createElement("p");
+  //   url.textContent = option.website;
+  //   detailsContainer.appendChild(url);
 
   optionContainer.appendChild(detailsContainer);
 
