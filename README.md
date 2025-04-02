@@ -1,0 +1,2 @@
+# ArtIntellAgg
+I built a tool to enhance my workflow with LLMs. When I debug, I've noticed that certain models can get stuck in loops. Some times you may just want a fresh start. This tool helps me interact more efficiently with the models when needed. It includes a feature to store a context prompt, which can be provided to the LLM before asking a question, giving the model additional context before attempting to answer your question. Additionally, I added keyboard shortcuts inspired by VimMotions (e.g., d + d) to boost developer productivity.
